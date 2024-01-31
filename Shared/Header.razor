@@ -1,0 +1,102 @@
+@inject RefreshBookstore.Services.AuthenticationService AuthenticationService
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@using RefreshBookstore.Shared
+
+<header>
+    <div class="header-container">
+        <span class="header-logo"></span>
+        <span class="header-icons">
+            <div class="header-search-box">
+                <input class="@searchInputClass" type="text" @bind="searchQuery" @onkeydown="HandleSearchKeyDown" />
+                <span class="header-icon header-search" @onclick="ToggleSearch"></span>
+            </div>
+            <span class="header-icon header-cart" @onclick="GoToCart"></span>
+            <span class="header-icon header-user" @onclick="ToggleUserMenu"></span>
+        </span>
+    </div>
+
+    @if (isLoggedIn)
+    {
+        @if (showDropdown)
+        {
+            <div class="header-dropdown-menu">
+                <div class="li-container mypage" @onclick="() => NavigateTo(@"/user-mypage")">마이페이지</div>
+                <div class="li-container logout" @onclick="Logout">로그아웃</div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="header-dropdown-menu">
+                <div class="li-container login" @onclick="() => NavigateTo(@"/login")">로그인</div>
+                <div class="li-container register" @onclick="() => NavigateTo(@"/register")">회원가입</div>
+        </div>
+    }
+</header>
+
+@code {
+    private bool isLoggedIn;
+    private bool isCartFull;
+    private bool showDropdown = false;
+    private bool searchActivated = false;
+    private string searchQuery = "";
+    private string searchInputClass => "header-search-input " + (searchActivated ? "header-search-input-appear" : "");
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoggedIn = await AuthenticationService.CheckLoginStatusAsync();
+        isCartFull = await IsCartFullAsync();
+    }
+
+    private async Task<bool> IsCartFullAsync()
+    {
+        var cartItems = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "cart");
+        return !string.IsNullOrEmpty(cartItems);
+    }
+
+    private void HandleSearchKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                NavigationManager.NavigateTo($"/book-search/{searchQuery}");
+            }
+            else
+            {
+                ToggleSearchAnimation();
+            }
+        }
+    }
+
+    private void ToggleSearchAnimation()
+    {
+        searchActivated = !searchActivated;
+    }
+
+    private void ToggleUserMenu()
+    {
+        showDropdown = !showDropdown;
+    }
+
+    private void NavigateTo(string url)
+    {
+        NavigationManager.NavigateTo(url);
+    }
+
+    private void GoToCart()
+    {
+        NavigationManager.NavigateTo("/cart");
+    }
+
+    private void ToggleSearch()
+    {
+        // 검색 토글 로직
+    }
+
+    private void Logout()
+    {
+        // 로그아웃 처리 로직
+    }
+}

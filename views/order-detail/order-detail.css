@@ -1,0 +1,277 @@
+@import url("/public/css/main.css");
+
+a {
+  color: var(--color-black);
+}
+
+a:visited {
+  color: var(--color-black);
+}
+
+.order-detail-menu {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-dark-gray);
+}
+
+.order-list-button {
+  text-align: right;
+  font-size: var(--font-medium);
+  padding: 0;
+  margin: 20px 20px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.order-list-button:hover {
+  cursor: pointer;
+}
+
+.order-detail-title {
+  text-align: left;
+  font-size: var(--font-large);
+  margin: 20px 20px;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  padding: 10px 20px;
+}
+
+.field {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.label {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-regular);
+  width: 150px;
+  margin: 10px;
+}
+
+.orderDate {
+  color: var(--color-black);
+}
+
+.shippingStatus {
+  color: var(--color-light-black);
+}
+
+.productInfoArea {
+  margin-top: 20px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 8px;
+}
+
+.books {
+  width: 100%;
+  padding: 4px 20px;
+}
+
+.books .book {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-button);
+  border: 0.3px var(--color-light-gray) solid;
+  box-shadow: 5px 5px 5px var(--color-light-gray);
+}
+
+.book .book-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border: 0.3px var(--color-light-gray) solid;
+}
+
+.book .book-img img{
+  width: 100px;
+}
+
+.book .book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 40px;
+  width: 75%;
+}
+
+.book .book-info .book-title {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  text-align: left;
+  position: inherit;
+  width: 100%;
+  margin: 10px;
+  padding: 10px 0;
+  border-bottom: 0.3px var(--color-light-gray) solid;
+}
+
+.book .book-info .author {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  text-align: left;
+  width: 100%;
+  margin: 0 10px;
+
+}
+
+.book .book-info .book-price {
+  font-size: var(--font-medium);
+  color: var(--color-black);
+  text-align: right;
+  width: 100%;
+  margin: 10px;
+  padding: 0 10px;
+}
+
+.deliveryFeeArea {
+  padding: 4px 20px;
+}
+
+.deliveryFee {
+  padding: 8px;
+}
+
+.entirePriceArea {
+  padding: 4px 20px;
+}
+
+.entirePrice {
+  padding: 8px;
+  font-weight: 700;
+  font-size: var(--font-medium);
+  color: var(--color-point);
+}
+
+.userInfo {
+  margin-top: 20px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 8px;
+  padding: 4px 20px;
+}
+
+input {
+  height: 35px;
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-input);
+  color: var(--color-black);
+  font-size: var(--font-regular);
+  padding: 0 10px;
+  margin-right: 4px;
+}
+
+input:focus {
+  outline: 1px solid var(--color-point);
+}
+
+input:read-only {
+  border: 1px solid var(--color-light-gray);
+}
+input:read-only:focus {
+  outline: none;
+}
+
+.nameArea {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+}
+
+.phoneNumberArea {
+  display: flex;
+  align-items: center;
+}
+
+.phoneNumber {
+  display: flex;
+  align-items: center;
+}
+
+.addressArea {
+  display: flex;
+  align-items: center;
+}
+
+.postalCode {
+  width: 80px;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  width: 350px;
+}
+
+.deliveryRequestArea {
+  display: flex;
+  align-items: center;
+}
+
+.deliveryRequest {
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+#input-error {
+  display: none;
+  color: var(--color-red);
+  padding-left: 30px;
+}
+
+.buttonArea {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.modifyCompleteButton {
+  font-size: var(--font-medium);
+  color: var(--color-black);
+  border: 1px var(--color-dark-gray) solid;
+  border-radius: var(--border-radius-button);
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.modifyButton {
+  font-size: var(--font-medium);
+  color: var(--color-black);
+  border: 1px var(--color-dark-gray) solid;
+  border-radius: var(--border-radius-button);
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.cancelButton {
+  font-size: var(--font-medium);
+  color: var(--color-black);
+  border: 1px var(--color-dark-gray) solid;
+  border-radius: var(--border-radius-button);
+  padding: 8px 12px;
+  cursor: pointer;
+}

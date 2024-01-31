@@ -1,0 +1,39 @@
+﻿@page "/"
+@inject HttpClient Http
+
+<div class="animation">
+    <div class="el-logo"></div>
+    <div class="el-slogan">
+        당신의 { <i><b>마음</b></i> } 을 리프레시하는 서점
+    </div>
+    <div class="el-1"></div>
+    <div class="el-2"></div>
+    <div class="el-3"></div>
+    <div class="el-4"></div>
+</div>
+
+<div class="container">
+    <!-- 이미지 슬라이드 -->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="images/img_banner_1.png" alt="img1" /></div>
+            <div class="slide"><img src="images/img_banner_2.png" alt="img2" /></div>
+            <div class="slide"><img src="images/img_banner_3.png" alt="img3" /></div>
+            <div class="slide"><img src="images/img_banner_1.png" alt="img1" /></div>
+        </div>
+    </div>
+
+    <!-- 책 카테고리 -->
+    <main>
+        <nav class="category-title">
+            <!-- 카테고리 타이틀 -->
+        </nav>
+
+        <!-- 선택한 카테고리와 권 수 -->
+        <div class="product-counter"></div>
+    </main>
+</div>
+
+@code {
+
+}

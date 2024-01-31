@@ -1,0 +1,10 @@
+# Compile generated files
+bin/
+obj/
+
+# Personal configuration options
+Properties/
+
+# The Views folder you mentioned
+Views/
+output.txt

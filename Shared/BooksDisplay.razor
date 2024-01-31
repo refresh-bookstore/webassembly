@@ -1,0 +1,27 @@
+@* BooksDisplay.razor *@
+@* @code {
+    private List<Book> books = new List<Book>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        books = await Http.GetFromJsonAsync<List<Book>>("https://refbook.kro.kr/category");
+    }
+} *@
+
+@* <div class="books">
+    @foreach (var book in books)
+    {
+        <div class="book">
+            <a class="book-link" href="/book-detail/?isbn=@book.Isbn">
+                <div class="img-container">
+                    <img src="@book.ImagePath" class="book-img" alt="@book.Title" />
+                </div>
+                <div class="book-body">
+                    <div class="book-text title">@book.Title</div>
+                    <div class="book-text category">#@book.Category</div>
+                    <div class="book-text price">@book.Price.ToString("N0")원</div>
+                </div>
+            </a>
+        </div>
+    }
+</div> *@

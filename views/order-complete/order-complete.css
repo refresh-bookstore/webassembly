@@ -1,0 +1,43 @@
+@import url("/public/css/main.css");
+
+.order-complete-title {
+  text-align: left;
+  font-size: var(--font-large);
+  margin: 20px 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-dark-gray);
+}
+
+.complete__message p.title {
+  text-align: center;
+  font-size: var(--font-large);
+  padding: 100px 0;
+}
+
+.complete__message p.message {
+  font-size: var(--font-large);
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+.button__area {
+  text-align: center;
+}
+
+.button__area button {
+  font-size: var(--font-medium);
+  padding: 8px;
+  margin: 4px;
+  background-color: #1DC078;
+  color:var(--color-white);
+  font-weight: var(--weight-regular);
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+}
+
+.button__area button:hover {
+  background-color: var(--color-dark-green);
+  cursor: pointer;
+}
